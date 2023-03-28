@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { TaskService } from '../task.service';
-import { Todo } from '../todo';
+
 
 @Component({
   selector: 'app-todo-list',
@@ -9,12 +9,15 @@ import { Todo } from '../todo';
 })
 export class TodoListComponent implements OnInit {
 
-  tasks: Todo[] = [];
+  tasks = [
+    { name: 'Task 1', completed: false },
+    { name: 'Task 2', completed: true },
+    { name: 'Task 3', completed: false }
+  ];
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.tasks = this.taskService.getTasks();
   }
 
 }
