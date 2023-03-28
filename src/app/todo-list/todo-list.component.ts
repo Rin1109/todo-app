@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { TaskService } from '../task.service';
+
 
 
 @Component({
@@ -23,7 +23,7 @@ export class TodoListComponent implements OnInit {
     this.tasks.splice(index, 1);
   }
 
-  constructor(private taskService: TaskService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
