@@ -15,6 +15,14 @@ export class TodoListComponent implements OnInit {
     { name: 'Task 3', completed: false }
   ];
 
+  addTask(newTaskName: string) {
+    this.tasks.push({ name: newTaskName, completed: false });
+  }
+
+  deleteTask(index: number) {
+    this.tasks.splice(index, 1);
+  }
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
